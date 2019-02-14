@@ -1,20 +1,20 @@
 import React from 'react';
 import Header from './Header';
 import TicketList from './TicketList';
-import cutestpuppyever from '../assets/images/cutestpuppyever.jpg'
 import NewTicketForm from './NewTicketForm';
 import { Switch, Route } from 'react-router-dom';
+import Error404 from './Error404';
 
 function App() {
   return (
     <div>
       <Header/>
-      <TicketList/>
-      <img src={cutestpuppyever} style={{maxHeight: '400px'}}/>
       <Switch>
         <Route exact path='/' component={TicketList} />
         <Route path='/newTicket' component={NewTicketForm} />
+        <Route component={Error404} />
       </Switch>
+      
     </div>
   );
 }

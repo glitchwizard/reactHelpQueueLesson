@@ -1,5 +1,6 @@
 import React from 'react';
 import Ticket from './Ticket';
+import cutestpuppyever from '../assets/images/cutestpuppyever.jpg';
 
 var masterTicketList = [
   {
@@ -29,6 +30,7 @@ function TicketList() {
           issue = {ticket.issue} 
           key={index} />
       )}
+      <img src={cutestpuppyever} style={{ maxHeight: '400px' }} />
     </div>
   );
 }
