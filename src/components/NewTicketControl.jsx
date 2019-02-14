@@ -1,4 +1,6 @@
 import React from 'react';
+import ConfirmationQuestions from './ConfirmationQuestions';
+import NewTicketForm from './NewTicketForm';
 
 class NewTicketControl extends React.Component {
 
@@ -7,20 +9,23 @@ class NewTicketControl extends React.Component {
     this.state = {
       formVisibileOnPage: false
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.handleTroubleshootingConfirmation = this.handleTroubleshootingConfirmation.bind(this);
   }
 
-  handleClick(){
+  handleTroubleshootingConfirmation(){
     this.setState({formVisibileOnPage: true});
-    console.log('formVisibleOnPage is currently set to: ' + this.state.formVisibileOnPage);
-        
   }
 
   render(){
+    let currentlyVisbleContent = null;
+    if (this.state.formVisibileOnPage){
+      currentlyVisbleContent = <NewTicketForm />;
+    } else {
+      currentlyVisbleContent = <ConfirmationQuestions onTroubleshootingConfirmation={this.handleTroubleshootingConfirmation}/>;
+    }
     return (
       <div>
-        <p>This is the NewTicketControl component!</p>
-        <strong onClick={this.handleClick}>Click me to change my state!</strong>
+        {currentlyVisbleContent}
       </div>
     );
   }
