@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 function TicketList(props) {
   console.log(props.ticketList);
-  
+
   return (
     <div>
       <hr/>
