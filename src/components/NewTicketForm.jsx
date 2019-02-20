@@ -21,16 +21,6 @@ function NewTicketForm(){
   let _location = null;
   let _issue = null;
 
-  function handleNewTicketFormSubmission(event) {
-    event.preventDefault();
-    console.log(_names.value);
-    console.log(_location.value);
-    console.log(_issue.value);
-    _names.value = '';
-    _location.value = '';
-    _issue.value = '';
-  }
-
   return(
     <div>
       <form onSubmit={handleNewTicketFormSubmission}><p></p>
