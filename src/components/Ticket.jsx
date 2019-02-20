@@ -14,7 +14,7 @@ function Ticket({location, names, issue}){
             }
             `}</style>
       <h3>{location} - {names}</h3>
-      <h4>{displayTimeOpen(props.timeOpen)} ago</h4>
+      <h4>{displayTimeOpen(props.formattedWaitTime)} ago</h4>
       <p><em>{issue}</em></p>
       <hr/>
     </div>
@@ -29,7 +29,7 @@ Ticket.propTypes = {
   names: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   issue: PropTypes.string,
-  timeOpen: PropTypes.instanceOf(Moment).isRequired
+  formattedWaitTime: PropTypes.instanceOf(Moment).isRequired
 };
 
 export default Ticket;
