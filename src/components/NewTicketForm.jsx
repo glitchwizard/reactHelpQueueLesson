@@ -16,6 +16,7 @@ function NewTicketForm(props){
     _location.value = '';
     _issue.value = '';
   }
+}
 
 function NewTicketForm(){
   let _names = null;
