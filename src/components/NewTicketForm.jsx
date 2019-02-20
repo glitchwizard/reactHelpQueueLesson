@@ -1,12 +1,40 @@
 import React from 'react';
 
 function NewTicketForm(){
+  let _names = null;
+  let _location = null;
+  let _issue = null;
+
+  function handleNewTicketFormSubmission(event) {
+    event.preventDefault();
+    console.log(_names.value);
+    console.log(_location.value);
+    console.log(_issue.value);
+    _names.value = '';
+    _location.value = '';
+    _issue.value = '';
+  }
+
   return(
     <div>
-      <form><p></p>
-        <input type ='text' id='names' placeholder= 'Pair Names'/><p></p>
-        <input type= 'text' id = 'location' placeholder= 'Location'/><p></p>
-        <textarea id= 'issue' placeholder= 'Describe your issue'/><p></p>
+      <form onSubmit={handleNewTicketFormSubmission}><p></p>
+        <input 
+        type ='text' 
+        id='names' 
+        placeholder= 'Pair Names'
+        ref={(input) => {_names = input;}}/>
+        <p></p>
+        <input 
+        type= 'text' 
+        id = 'location' 
+        placeholder= 'Location'
+        ref={(input) => {_location = input;}}/>
+        <p></p>
+        <textarea 
+        id= 'issue' 
+        placeholder= 'Describe your issue'
+        ref={(textarea) => {_issue = textarea;}}/>
+        <p></p>
         <button type='submit'> Help !</button>
       </form>
     </div>
