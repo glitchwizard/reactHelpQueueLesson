@@ -4,7 +4,6 @@ import cutestpuppyever from '../assets/images/cutestpuppyever.jpg';
 import PropTypes from 'prop-types';
 
 function TicketList(props) {
-  console.log(props.ticketList);
 
   return (
     <div>

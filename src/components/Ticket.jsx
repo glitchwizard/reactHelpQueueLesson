@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Moment from 'moment';
 
-function Ticket({location, names, issue}){
+function Ticket({location, names, issue, formattedWaitTime}){
   return (
     <div>
       <style global jsx>{`
@@ -14,7 +13,7 @@ function Ticket({location, names, issue}){
             }
             `}</style>
       <h3>{location} - {names}</h3>
-      <h4>{props.formattedWaitTime} ago</h4>
+      <h4>{formattedWaitTime} ago</h4>
       <p><em>{issue}</em></p>
       <hr/>
     </div>
