@@ -28,7 +28,7 @@ class NewTicketControl extends React.Component {
       <div>
         {currentlyVisibleContent}
       </div>
-    )
+    );
   }
 }
 

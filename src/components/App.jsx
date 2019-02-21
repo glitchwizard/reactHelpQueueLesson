@@ -5,6 +5,8 @@ import NewTicketControl from './NewTicketControl';
 import { Switch, Route } from 'react-router-dom';
 import Error404 from './Error404';
 import Moment from 'moment';
+import Admin from './Admin';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -12,34 +14,34 @@ class App extends React.Component {
     this.state = {
       masterTicketList: []
     };
-    this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this)
+    this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
   }
 
   handleAddingNewTicketToList(newTicket){
     let newMasterTicketList = this.state.masterTicketList.slice();
     newTicket.formattedWaitTime = (newTicket.timeOpen).fromNow(true);
-     newMasterTicketList.push(newTicket);
-     this.setState({masterTicketList: newMasterTicketList});
- }
+    newMasterTicketList.push(newTicket);
+    this.setState({masterTicketList: newMasterTicketList});
+  }
 
- componentDidMount() {
-   this.waitTimeUpdateTimer = setInterval(() => {
-     this.updateTicketElapsedWaitTime()
-   }, 60000);
- }
+  componentDidMount() {
+    this.waitTimeUpdateTimer = setInterval(() => {
+      this.updateTicketElapsedWaitTime();
+    }, 60000);
+  }
 
- updateTicketElapsedWaitTime() {
-   console.log('check');
-   let newMasterTicketList = this.state.masterTicketList.slice();
-   newMasterTicketList.forEach((ticket) => 
-   ticket.formattedWaitTime = (ticket.timeOpen).fromNow(true)
-   );
-   this.setState({masterTicketList: newMasterTicketList})
- }
+  updateTicketElapsedWaitTime() {
+    console.log('check');
+    let newMasterTicketList = this.state.masterTicketList.slice();
+    newMasterTicketList.forEach((ticket) => 
+      ticket.formattedWaitTime = (ticket.timeOpen).fromNow(true)
+    );
+    this.setState({masterTicketList: newMasterTicketList});
+  }
 
- componentWillUnmount(){
-   clearInterval(this.waitTimeUpdateTimer);
- }
+  componentWillUnmount(){
+    clearInterval(this.waitTimeUpdateTimer);
+  }
 
   render(){
     return (
@@ -48,6 +50,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' render={()=><TicketList ticketList={this.state.masterTicketList} />} />
           <Route path='/newTicket' render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />}  />
+          <Route path='/admin' component={Admin} />
           <Route component={Error404} />
         </Switch>
       </div>
