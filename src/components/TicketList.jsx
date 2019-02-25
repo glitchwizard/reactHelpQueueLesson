@@ -11,13 +11,13 @@ function TicketList(props) {
       {Object.keys(props.ticketList).map( function(ticketId) {
         let ticket = props.ticketList[ticketId];
         return <Ticket names={ticket.names}
-        location={ticket.location}
-        issue={ticket.issue}
-        formattedWaitTime={ticket.formattedWaitTime}
-        currentRouterPath={props.currentRouterPath}
-        key={ticketId}
-        onTicketSelection={props.onTicketSelection} 
-        ticketId={ticketId}/>
+          location={ticket.location}
+          issue={ticket.issue}
+          formattedWaitTime={ticket.formattedWaitTime}
+          currentRouterPath={props.currentRouterPath}
+          key={ticketId}
+          onTicketSelection={props.onTicketSelection} 
+          ticketId={ticketId}/>;
       })}
       <img src={cutestpuppyever} style={{ maxHeight: '400px' }} />
     </div>
