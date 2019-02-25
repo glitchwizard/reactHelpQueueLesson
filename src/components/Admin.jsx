@@ -6,7 +6,7 @@ import TicketDetail from './TicketDetail';
 function Admin({ticketList, currentRouterPath, onTicketSelection, selectedTicket}) {
   let optionalSelectedTicketContent = null;
   if (selectedTicket != null){
-    optionalSelectedTicketContent = <TicketDetail selectedTicket={selectedTicket} />
+    optionalSelectedTicketContent = <TicketDetail selectedTicket={ticketList[selectedTicket]} />
   }
   return (
     <div>
@@ -24,7 +24,7 @@ Admin.propTypes = {
   ticketList: PropTypes.array,
   currentRouterPath: PropTypes.string.isRequired,
   onTicketSelection: PropTypes.func.isRequired,
-  selectedTicket: PropTypes.object
+  selectedTicket: PropTypes.string
 };
 
 export default Admin;
