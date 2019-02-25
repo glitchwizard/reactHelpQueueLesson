@@ -15,9 +15,9 @@ function TicketList(props) {
         issue={ticket.issue}
         formattedWaitTime={ticket.formattedWaitTime}
         currentRouterPath={props.currentRouterPath}
-        key={ticket.id}
+        key={ticketId}
         onTicketSelection={props.onTicketSelection} 
-        ticketId={ticket.id}/>
+        ticketId={ticketId}/>
       })}
       <img src={cutestpuppyever} style={{ maxHeight: '400px' }} />
     </div>
