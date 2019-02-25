@@ -6,7 +6,7 @@ import TicketDetail from './TicketDetail';
 function Admin({ticketList, currentRouterPath, onTicketSelection, selectedTicket}) {
   let optionalSelectedTicketContent = null;
   if (selectedTicket != null){
-    optionalSelectedTicketContent = <TicketDetail />
+    optionalSelectedTicketContent = <TicketDetail selectedTicket={selectedTicket} />
   }
   return (
     <div>
