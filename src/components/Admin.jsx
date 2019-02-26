@@ -12,16 +12,16 @@ function Admin({ticketList, currentRouterPath, onTicketSelection, selectedTicket
     <div>
       <h2>Admin</h2>
       {optionalSelectedTicketContent}
-      <TicketList 
-        ticketList={ticketList} 
-        currentRouterPath={currentRouterPath} 
+      <TicketList
+        ticketList={ticketList}
+        currentRouterPath={currentRouterPath}
         onTicketSelection={onTicketSelection}/>
     </div>
   );
 }
 
 Admin.propTypes = {
-  ticketList: PropTypes.array,
+  ticketList: PropTypes.object,
   currentRouterPath: PropTypes.string.isRequired,
   onTicketSelection: PropTypes.func.isRequired,
   selectedTicket: PropTypes.string

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Ticket({location, names, issue, formattedWaitTime, currentRouterPath, onTicketSelection, ticketId}){
+function Ticket({location, names, formattedWaitTime, currentRouterPath, onTicketSelection, ticketId}){
 
   const ticketInformation =
     <div>
