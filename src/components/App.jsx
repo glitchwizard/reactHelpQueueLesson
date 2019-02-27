@@ -51,7 +51,7 @@ class App extends React.Component {
           <Route exact path='/' render={()=><TicketList ticketList={this.props.masterTicketList} />} />
           <Route path='/newTicket' render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />}  />
 
-        <Route path='/admin' render={(props) => <Admin
+          <Route path='/admin' render={(props) => <Admin
             ticketList={this.props.masterTicketList}
             currentRouterPath={props.location.pathname}
             onTicketSelection={this.handleChangingSelectedTicket}

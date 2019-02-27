@@ -4,7 +4,7 @@ import App from './components/App';
 import { HashRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { AppContainer } from 'react-hot-loader'
+import { AppContainer } from 'react-hot-loader';
 import rootReducer from './reducers/index';
 
 const store = createStore(rootReducer);
