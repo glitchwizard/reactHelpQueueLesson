@@ -4,7 +4,7 @@ import TicketList from './TicketList';
 import TicketDetail from './TicketDetail';
 import { connect } from 'react-redux';
 
-function Admin({ticketList, currentRouterPath, onTicketSelection, selectedTicket}) {
+function Admin({ticketList, currentRouterPath, selectedTicket}) {
   let optionalSelectedTicketContent = null;
   if (selectedTicket.length > 0){
     optionalSelectedTicketContent = <TicketDetail selectedTicket={ticketList[selectedTicket]} />;
@@ -15,8 +15,7 @@ function Admin({ticketList, currentRouterPath, onTicketSelection, selectedTicket
       {optionalSelectedTicketContent}
       <TicketList
         ticketList={ticketList}
-        currentRouterPath={currentRouterPath}
-        onTicketSelection={onTicketSelection}/>
+        currentRouterPath={currentRouterPath} />
     </div>
   );
 }

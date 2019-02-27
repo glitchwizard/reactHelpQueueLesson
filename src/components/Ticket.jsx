@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-function Ticket({location, names, formattedWaitTime, currentRouterPath, onTicketSelection, ticketId}){
+function Ticket({location, names, formattedWaitTime, currentRouterPath, ticketId}){
 
   function handleSavingSelectedTicket(ticketId){
     const { dispatch } = props;
@@ -49,7 +49,6 @@ Ticket.propTypes = {
   issue: PropTypes.string,
   formattedWaitTime: PropTypes.string.isRequired,
   currentRouterPath: PropTypes.string,
-  onTicketSelection: PropTypes.func,
   ticketId: PropTypes.string.isRequired
 };
 
