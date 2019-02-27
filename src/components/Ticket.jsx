@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-function Ticket({location, names, formattedWaitTime, currentRouterPath, ticketId}){
+function Ticket({dispatch, location, names, formattedWaitTime, currentRouterPath, ticketId}){
 
   function handleSavingSelectedTicket(ticketId){
-    const { dispatch } = props;
+    // const { dispatch } = props;
     const action = {
       type: 'SELECT_TICKET',
       ticketId: ticketId
@@ -23,7 +23,7 @@ function Ticket({location, names, formattedWaitTime, currentRouterPath, ticketId
                 background-color: blue;
             }
             `}</style>
-      <h3>{location} - {names}</h3>
+          <h3>{location} - {names}</h3>
       <h4>{formattedWaitTime} ago</h4>
       <hr/>
     </div>;
