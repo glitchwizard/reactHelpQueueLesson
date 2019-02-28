@@ -44,6 +44,7 @@ function Ticket({dispatch, location, names, formattedWaitTime, currentRouterPath
   }
 }
 
+
 Ticket.propTypes = {
   names: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
