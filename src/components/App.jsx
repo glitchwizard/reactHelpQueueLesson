@@ -9,8 +9,15 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import constantsImport from './../../src/constants';
 const { constants } = constantsImport;
+import * as actions from './../actions';
 
 class App extends React.Component {
+
+  componentWillMount( ) {
+    const { dispatch } = this.props;
+    const { watchFirebaseTicketsRef } = actions;
+    dispatch(watchFirebaseTicketsRef());
+  }
 
   componentDidMount() {
     this.waitTimeUpdateTimer = setInterval(() => {
@@ -21,7 +28,6 @@ class App extends React.Component {
   componentWillUnmount(){
     clearInterval(this.waitTimeUpdateTimer);
   }
-
 
   updateTicketElapsedWaitTime() {
     const { dispatch } = this.props;

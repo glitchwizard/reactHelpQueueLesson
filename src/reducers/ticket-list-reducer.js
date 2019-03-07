@@ -26,6 +26,12 @@ export default (state = {}, action) => {
     return newState;
   }
 
+  case constants.RECEIVE_TICKET: {
+      let newState = Object.assign({}, state);
+    newState[action.ticket.id] = action.ticket;
+    return newState;
+  }
+
   default:
     return state;
   }
