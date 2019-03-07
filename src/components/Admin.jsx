@@ -3,11 +3,8 @@ import PropTypes from 'prop-types';
 import TicketList from './TicketList';
 import TicketDetail from './TicketDetail';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 
 function Admin({ticketList, currentRouterPath, selectedTicket}) {
-  console.log('selectedTicket');
-  console.log(selectedTicket);
   let optionalSelectedTicketContent = null;
   if (selectedTicket.length > 0){
     optionalSelectedTicketContent = <TicketDetail selectedTicket={ticketList[selectedTicket]} />;

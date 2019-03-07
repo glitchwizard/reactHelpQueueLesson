@@ -2,14 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import { HashRouter } from 'react-router-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 import rootReducer from './reducers/index';
+import persistDataLocally from './middleware/persist-data-locally';
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(persistDataLocally));
 
-let unsubscribe = store.subscribe(() =>
+store.subscribe(() =>
+  // eslint-disable-next-line no-console
   console.log(store.getState())
 );
 

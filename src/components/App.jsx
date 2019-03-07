@@ -58,7 +58,8 @@ const mapStateToProps = state => {
 };
 
 App.propTypes ={
-  masterTicketList: PropTypes.object
+  masterTicketList: PropTypes.object,
+  dispatch: PropTypes.func
 };
 
 export default withRouter(connect(mapStateToProps)(App));

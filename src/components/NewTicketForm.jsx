@@ -3,6 +3,7 @@ import Moment from 'moment';
 import { v4 } from 'uuid';
 import { connect } from 'react-redux';
 import constants from './../../src/constants';
+import PropTypes from 'prop-types';
 
 function NewTicketForm(props){
   let _names = null;
@@ -52,5 +53,9 @@ function NewTicketForm(props){
     </div>
   );
 }
+
+NewTicketForm.propTypes = {
+  dispatch: PropTypes.func
+};
 
 export default connect()(NewTicketForm);
