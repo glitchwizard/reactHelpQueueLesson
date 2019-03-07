@@ -6,20 +6,9 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 import rootReducer from './reducers/index';
-import persistDataLocally from './middleware/persist-data-locally';
+import thunkMiddleware from 'redux-thunk';
 
-let retrievedState;
-try {
-  retrievedState = localStorage.getItem('reduxStore');
-  if (retrievedState === null) {
-    retrievedState ={};
-  }
-  retrievedState = JSON.parse(retrievedState);
-} catch (err) {
-  retrievedState ={};
-}
-
-const store = createStore(rootReducer, applyMiddleware(persistDataLocally));
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 
 store.subscribe(() =>
   // eslint-disable-next-line no-console
