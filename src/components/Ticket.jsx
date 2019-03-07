@@ -24,7 +24,7 @@ function Ticket({dispatch, location, names, formattedWaitTime, currentRouterPath
                 background-color: blue;
             }
             `}</style>
-          <h3>{location} - {names}</h3>
+      <h3>{location} - {names}</h3>
       <h4>{formattedWaitTime} ago</h4>
       <hr/>
     </div>;

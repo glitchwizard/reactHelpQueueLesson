@@ -7,7 +7,6 @@ import Error404 from './Error404';
 import Admin from './Admin';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Moment from 'moment';
 import constants from './../../src/constants';
 
 class App extends React.Component {
