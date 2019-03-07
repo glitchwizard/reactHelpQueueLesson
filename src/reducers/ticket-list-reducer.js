@@ -1,4 +1,5 @@
-import constants from './../constants';
+import constantsImport from './../../src/constants';
+const { constants } = constantsImport;
 
 export default (state = {}, action) => {
   let newState;

@@ -8,6 +8,17 @@ import { AppContainer } from 'react-hot-loader';
 import rootReducer from './reducers/index';
 import persistDataLocally from './middleware/persist-data-locally';
 
+let retrievedState;
+try {
+  retrievedState = localStorage.getItem('reduxStore');
+  if (retrievedState === null) {
+    retrievedState ={};
+  }
+  retrievedState = JSON.parse(retrievedState);
+} catch (err) {
+  retrievedState ={};
+}
+
 const store = createStore(rootReducer, applyMiddleware(persistDataLocally));
 
 store.subscribe(() =>

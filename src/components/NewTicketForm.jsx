@@ -2,7 +2,8 @@ import React from 'react';
 import Moment from 'moment';
 import { v4 } from 'uuid';
 import { connect } from 'react-redux';
-import constants from './../../src/constants';
+import constantsImport from './../../src/constants';
+const {constants} = constantsImport;
 import PropTypes from 'prop-types';
 
 function NewTicketForm(props){

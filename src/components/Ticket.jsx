@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import constants from './../../src/constants';
+import constantsImport from './../../src/constants';
+const {constants} = constantsImport;
 
 function Ticket({dispatch, location, names, formattedWaitTime, currentRouterPath, ticketId}){
 
